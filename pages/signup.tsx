@@ -1,5 +1,6 @@
 import EmailRegisterForm from '@/components/email-register-form';
 import PasswordForm from '@/components/password-form';
+import ResetPassword from '@/components/reset-password';
 import { useAuth } from '@/context/auth';
 import { auth } from '@/firebase/client';
 import { signOut } from 'firebase/auth';
@@ -29,7 +30,7 @@ const Signup = () => {
 
       {view === 'register' && <EmailRegisterForm />}
       {view === 'set-password' && <PasswordForm />}
-      {view === 'reset-password' && <p>reset-password</p>}
+      {view === 'reset-password' && <ResetPassword />}
     </div>
   );
 };
