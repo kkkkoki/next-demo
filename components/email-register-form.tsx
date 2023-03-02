@@ -6,13 +6,17 @@ import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import validator from 'validator';
 
+type FormValue = {
+  email: string;
+};
+
 const EmailRegisterForm = () => {
   const router = useRouter();
   const {
     register,
     handleSubmit,
     formState: { errors, isValid },
-  } = useForm<Pick<User, 'email'>>({
+  } = useForm<FormValue>({
     mode: 'onChange',
   });
 
