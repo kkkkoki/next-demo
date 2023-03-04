@@ -10,6 +10,7 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import validator from 'validator';
+import Button from './button';
 
 type FormValue = {
   password: string;
@@ -49,9 +50,6 @@ const PasswordForm = () => {
       let email = window.localStorage.getItem('emailForSignIn');
       if (!email) {
         email = window.prompt('メールアドレスを入力してください');
-      }
-      //???
-      if (!email) {
         return;
       }
 
@@ -83,11 +81,12 @@ const PasswordForm = () => {
         {errors.password && <p>{errors.password.message}</p>}
       </label>
 
-      <button disabled={!isValid}>パスワード設定</button>
+      <Button disabled={!isValid}>パスワード設定</Button>
 
       <p>
         アカウントをお持ちの方は
         <Link
+          className="default-link"
           replace
           shallow
           href={{

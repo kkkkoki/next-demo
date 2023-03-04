@@ -1,3 +1,4 @@
+import Button from '@/components/button';
 import EmailRegisterForm from '@/components/email-register-form';
 import PasswordForm from '@/components/password-form';
 import ResetPassword from '@/components/reset-password';
@@ -20,11 +21,9 @@ const Signup = () => {
     <div>
       <h1>CreateAccount</h1>
       {fbUser && (
-        <p className="p-3 rounded-lg mb-4 bg-black/20 text-sm">
+        <p>
           {fbUser.email} でログイン中です。
-          <button className="text-pink-500" onClick={() => signOut(auth)}>
-            ログアウト
-          </button>
+          <Button onClick={() => signOut(auth)}>ログアウト</Button>
         </p>
       )}
 

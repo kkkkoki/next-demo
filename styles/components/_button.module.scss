@@ -1,0 +1,21 @@
+.primary_btn {
+  font-size: 0.95rem;
+  padding: 0.7em 1.3em;
+  color: var(--c-primary-contrast);
+  background: var(--c-primary);
+  border-radius: 4px;
+
+  &:hover {
+    background-color: var(--c-secondary-tint);
+  }
+
+  &:disabled {
+    color: var(--c-disable-text-light);
+    background-color: var(--c-disable-btn-light);
+    cursor: not-allowed;
+
+    &:hover {
+      background-color: var(--c-disable-btn-light);
+    }
+  }
+}

@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import validator from 'validator';
+import Button from './button';
 
 type FormValue = {
   email: string;
@@ -32,24 +33,27 @@ const ResetPassword = () => {
   return (
     <div>
       <form onSubmit={handleSubmit(submit)}>
-        <h2>パスワード再設定</h2>
-        <p>パスワード再設定メールを送る</p>
+        <div>
+          <h2>パスワード再設定</h2>
+          <p>パスワード再設定メールを送る</p>
 
-        <label>
-          <p>メールアドレス</p>
-          <input
-            required
-            type="email"
-            autoComplete="email"
-            {...register('email', {
-              required: '必須入力です',
-              validate: (value) => validator.isEmail(value) || '不正な形式です',
-            })}
-          />
-        </label>
-        {errors.email && <p>{errors.email.message}</p>}
+          <label>
+            <p>メールアドレス</p>
+            <input
+              required
+              type="email"
+              autoComplete="email"
+              {...register('email', {
+                required: '必須入力です',
+                validate: (value) =>
+                  validator.isEmail(value) || '不正な形式です',
+              })}
+            />
+          </label>
+          {errors.email && <p>{errors.email.message}</p>}
+        </div>
 
-        <button disabled={!isValid}>送信</button>
+        <Button disabled={!isValid}>送信</Button>
       </form>
     </div>
   );
