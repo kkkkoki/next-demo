@@ -18,8 +18,8 @@ html {
 
 body {
   margin: 0;
-  color: var(--c-base-text);
-  background: var(--c-base-bg);
+  color: var(--c-light-text);
+  background: var(--c-light-bg);
   word-break: break-word;
   word-wrap: break-word;
   font-family: "Inter", "BlinkMacSystemFont", "Hiragino Kaku Gothic ProN",
@@ -79,10 +79,8 @@ button {
   transition: 0.25s;
   padding: 0;
   margin: 0;
+}
 
-  &:disabled {
-    color: var(--c-disable-text-dark);
-    background-color: var(--c-disable-btn-dark);
-    cursor: not-allowed;
-  }
+.default-link {
+  color: #0066c0;
 }

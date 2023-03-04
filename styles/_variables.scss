@@ -1,11 +1,76 @@
 :root {
-  --c-base-bg: #111;
-  --c-base-bg-lighter: #24242d;
-  --c-base-text: #fff;
-  --c-base-text-lighter: rgba(212, 231, 241, 0.6);
+  --c-light-text: var(--c-light-contrast);
+  --c-dark-text: var(--c-dark-contrast);
+  --c-light-bg: #fff;
+  --c-dark-bg: var(--c-dark);
+  --c-link-text: #0066c0;
+
   --c-border: rgba(115, 125, 130, 0.4);
-  --c-primary-bg: #f57c00;
-  --c-primary-text: #ffe985;
+  --c-disable-text-light: rgba(0, 0, 0, 0.3);
+  --c-disable-btn-light: rgba(0, 0, 0, 0.12);
   --c-disable-text-dark: rgba(255, 255, 255, 0.3);
   --c-disable-btn-dark: rgba(255, 255, 255, 0.12);
+
+  --c-primary: #F6B352;
+  --c-primary-rgb: 246, 179, 82;
+  --c-primary-contrast: #000000;
+  --c-primary-contrast-rgb: 0, 0, 0;
+  --c-primary-shade: #d89e48;
+  --c-primary-tint: #f7bb63;
+
+  --c-secondary: #FC913A;
+  --c-secondary-rgb: 252, 145, 58;
+  --c-secondary-contrast: #000000;
+  --c-secondary-contrast-rgb: 0, 0, 0;
+  --c-secondary-shade: #de8033;
+  --c-secondary-tint: #fc9c4e;
+
+  --c-tertiary: #F68655;
+  --c-tertiary-rgb: 246, 134, 85;
+  --c-tertiary-contrast: #000000;
+  --c-tertiary-contrast-rgb: 0, 0, 0;
+  --c-tertiary-shade: #d8764b;
+  --c-tertiary-tint: #f79266;
+
+  --c-success: #4C4C4C;
+  --c-success-rgb: 76, 76, 76;
+  --c-success-contrast: #ffffff;
+  --c-success-contrast-rgb: 255, 255, 255;
+  --c-success-shade: #434343;
+  --c-success-tint: #5e5e5e;
+
+  --c-warning: #ffc409;
+  --c-warning-rgb: 255, 196, 9;
+  --c-warning-contrast: #000000;
+  --c-warning-contrast-rgb: 0, 0, 0;
+  --c-warning-shade: #e0ac08;
+  --c-warning-tint: #ffca22;
+
+  --c-danger: #eb445a;
+  --c-danger-rgb: 235, 68, 90;
+  --c-danger-contrast: #ffffff;
+  --c-danger-contrast-rgb: 255, 255, 255;
+  --c-danger-shade: #cf3c4f;
+  --c-danger-tint: #ed576b;
+
+  --c-light: #f4f5f8;
+  --c-light-rgb: 244, 245, 248;
+  --c-light-contrast: #000000;
+  --c-light-contrast-rgb: 0, 0, 0;
+  --c-light-shade: #d7d8da;
+  --c-light-tint: #f5f6f9;
+
+  --c-medium: #92949c;
+  --c-medium-rgb: 146, 148, 156;
+  --c-medium-contrast: #000000;
+  --c-medium-contrast-rgb: 0, 0, 0;
+  --c-medium-shade: #808289;
+  --c-medium-tint: #9d9fa6;
+
+  --c-dark: #222428;
+  --c-dark-rgb: 34, 36, 40;
+  --c-dark-contrast: #ffffff;
+  --c-dark-contrast-rgb: 255, 255, 255;
+  --c-dark-shade: #1e2023;
+  --c-dark-tint: #383a3e;
 }
