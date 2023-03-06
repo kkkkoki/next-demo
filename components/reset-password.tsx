@@ -1,10 +1,11 @@
-import { auth } from '@/firebase/client';
-import { sendPasswordResetEmail } from 'firebase/auth';
-import { useRouter } from 'next/router';
 import React from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { sendPasswordResetEmail } from 'firebase/auth';
 import { useForm } from 'react-hook-form';
 import validator from 'validator';
 import Button from './button';
+import { auth } from '@/firebase/client';
 
 type FormValue = {
   email: string;
@@ -20,7 +21,7 @@ const ResetPassword = () => {
     mode: 'onChange',
   });
 
-  const submit = ({ email }: FormValue) => {
+  const submit = async ({ email }: FormValue): Promise<void> => {
     return sendPasswordResetEmail(auth, email)
       .then(() => {
         alert(
@@ -30,11 +31,12 @@ const ResetPassword = () => {
       })
       .catch(() => alert('該当するアカウントは存在しません。'));
   };
+
   return (
-    <div>
+    <>
       <form onSubmit={handleSubmit(submit)}>
         <div>
-          <h2>パスワード再設定</h2>
+          <h1>パスワード再設定</h1>
           <p>パスワード再設定メールを送る</p>
 
           <label>
@@ -55,7 +57,34 @@ const ResetPassword = () => {
 
         <Button disabled={!isValid}>送信</Button>
       </form>
-    </div>
+
+      <div>
+        <Link
+          className="default-link"
+          href={{
+            query: {
+              view: 'register',
+            },
+          }}
+          replace
+          shallow
+        >
+          アカウント登録
+        </Link>
+        <Link
+          className="default-link"
+          href={{
+            query: {
+              view: 'login',
+            },
+          }}
+          replace
+          shallow
+        >
+          ログイン
+        </Link>
+      </div>
+    </>
   );
 };
 
