@@ -9,7 +9,7 @@ import validator from 'validator';
 import { auth } from '@/firebase/client';
 import { User } from '@/types/user';
 import Button from '@/components/button';
-import styles from '@/styles/components/email-register-form.module.scss';
+import styles from '@/styles/components/_email-register-form.module.scss';
 
 type FormValue = {
   email: string;
