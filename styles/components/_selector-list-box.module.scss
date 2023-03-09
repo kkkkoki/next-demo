@@ -1,0 +1,101 @@
+@import '@/styles/_utils';
+
+.list {
+  width: inherit;
+  &__label_title {
+    font-weight: bold;
+  }
+
+  &__btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border: 1px solid rgb(51 65 85 / 0.1);
+    border-radius: 4px;
+    padding: 8px 12px;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    text-align: left;
+    margin-top: 8px;
+  }
+
+  &__chevron_icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  &__options {
+    position: absolute;
+    width: inherit;
+    background: #fff;
+    overflow: hidden;
+    border: 1px solid rgb(51 65 85 / 0.1);
+    border-radius: 4px;
+    box-shadow: var(--shadow-select-list);
+    margin-top: 8px;
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 8px 16px 8px 40px;
+    cursor: pointer;
+    &_active,
+    &:hover {
+      background-color: var(--c-primary-tint);
+    }
+
+    @include mq(sm) {
+      border-bottom: 1px solid rgb(51 65 85 / 0.1);
+    }
+  }
+
+  &__selected_icon {
+    position: absolute;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    color: var(--c-tertiary-shade);
+    margin-left: 16px;
+  }
+
+  &__label {
+    margin-left: 8px;
+  }
+}
+
+// Transition
+.enter {
+  transition-duration: 100ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.enterFrom {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.enterTo {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.leave {
+  transition-duration: 100ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
+.leaveFrom {
+  opacity: 1;
+}
+
+.leaveTo {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.action_btn {
+  margin-top: 8px;
+}
