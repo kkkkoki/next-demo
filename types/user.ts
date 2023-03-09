@@ -4,7 +4,7 @@ export type User = {
   email: string;
   avatarUrl: string;
   birthdate: string;
-  gender: string;
+  gender: 'female' | 'male' | 'other';
   createdAt: number;
-  updatedAt: number;
+  updatedAt: number | null;
 }
