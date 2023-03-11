@@ -1,23 +1,23 @@
 @import '@/styles/_utils';
 
 .list {
-  width: inherit;
-  &__label_title {
-    font-weight: bold;
+  position: relative;
+  width: 100%;
+
+  &__title {
+    font-size: 14px;
   }
 
   &__btn {
-    position: relative;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
     border: 1px solid rgb(51 65 85 / 0.1);
     border-radius: 4px;
     padding: 8px 12px;
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     text-align: left;
-    margin-top: 8px;
   }
 
   &__chevron_icon {
@@ -27,13 +27,17 @@
 
   &__options {
     position: absolute;
-    width: inherit;
+    width: 100%;
     background: #fff;
     overflow: hidden;
     border: 1px solid rgb(51 65 85 / 0.1);
     border-radius: 4px;
     box-shadow: var(--shadow-select-list);
     margin-top: 8px;
+    padding: 4px 0;
+    &:focus {
+      outline: none;
+    }
   }
 
   &__item {
@@ -45,10 +49,6 @@
     &_active,
     &:hover {
       background-color: var(--c-primary-tint);
-    }
-
-    @include mq(sm) {
-      border-bottom: 1px solid rgb(51 65 85 / 0.1);
     }
   }
 

@@ -12,21 +12,28 @@ const TRANSITION_CLASSES = {
   leaveTo: styles.leaveTo,
 };
 
+type SelectorOption = {
+  value: string;
+  label: string;
+};
+
 const SelectorListBox = (props: {
-  selectedData: { value: string; label: string };
-  setSelectedData: (data: { value: string; label: string }) => void;
-  dataList: { value: string; label: string }[];
+  selectedData: SelectorOption;
+  setSelectedData: (setData: SelectorOption) => void;
+  dataList: SelectorOption[];
 }) => {
   return (
-    <div className={styles.list}>
-      <Listbox value={props.selectedData} onChange={props.setSelectedData}>
-        <Listbox.Label className={styles.list__label_title}>性別</Listbox.Label>
+    <Listbox value={props.selectedData} onChange={props.setSelectedData}>
+      <div className={styles.list}>
+        <Listbox.Label className={styles.list__title}>性別</Listbox.Label>
+
         <Listbox.Button className={styles.list__btn}>
           <span>{props.selectedData.label}</span>
           <span className={styles.list__chevron_icon}>
             <ChevronUpDownIcon aria-hidden="true" />
           </span>
         </Listbox.Button>
+
         <Transition as={Fragment} {...TRANSITION_CLASSES}>
           <Listbox.Options className={styles.list__options}>
             {props.dataList.map((data, index) => (
@@ -53,8 +60,8 @@ const SelectorListBox = (props: {
             ))}
           </Listbox.Options>
         </Transition>
-      </Listbox>
-    </div>
+      </div>
+    </Listbox>
   );
 };
 
