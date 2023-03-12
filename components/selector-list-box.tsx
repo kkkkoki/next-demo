@@ -29,7 +29,6 @@ const SelectorListBox = (props: {
         <Listbox.Label className={styles.list__title}>
           {props.children}
         </Listbox.Label>
-        <Listbox.Label className={styles.list__title}>性別</Listbox.Label>
 
         <Listbox.Button className={styles.list__btn}>
           <span>{props.selectedData.label}</span>
