@@ -26,16 +26,15 @@ const SelectorListBox = (props: {
   return (
     <Listbox value={props.selectedData} onChange={props.setSelectedData}>
       <div className={styles.list}>
-        <Listbox.Label className={styles.list__title}>
-          {props.children}
+        <Listbox.Label>
+          <p className={styles.list__title}>{props.children}</p>
+          <Listbox.Button className={styles.list__btn}>
+            <span>{props.selectedData.label}</span>
+            <span className={styles.list__chevron_icon}>
+              <ChevronUpDownIcon aria-hidden="true" />
+            </span>
+          </Listbox.Button>
         </Listbox.Label>
-
-        <Listbox.Button className={styles.list__btn}>
-          <span>{props.selectedData.label}</span>
-          <span className={styles.list__chevron_icon}>
-            <ChevronUpDownIcon aria-hidden="true" />
-          </span>
-        </Listbox.Button>
 
         <Transition as={Fragment} {...TRANSITION_CLASSES}>
           <Listbox.Options className={styles.list__options}>
