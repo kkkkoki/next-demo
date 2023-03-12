@@ -18,6 +18,14 @@
     padding: 8px 12px;
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     text-align: left;
+    transition-duration: 0ms;
+
+    &:focus:not(.focus-visible) {
+      outline: none;
+      &:focus-visible {
+        outline: var(--c-primary-tint) solid 2px;
+      }
+    }
   }
 
   &__chevron_icon {
