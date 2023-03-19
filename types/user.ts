@@ -3,8 +3,8 @@ export type User = {
   name: string;
   email: string;
   avatarUrl: string;
-  birthdate: string;
+  birthday: string;
   gender: 'female' | 'male' | 'other';
   createdAt: number;
   updatedAt: number | null;
-}
+};
