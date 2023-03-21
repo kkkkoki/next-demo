@@ -4,7 +4,9 @@ import { z } from 'zod';
 const NAME_MIN_LENGTH = 1;
 const NAME_MAX_LENGTH = 50;
 const EMAIL_MAX_LENGTH = 256;
-
+const birthDateRegex = new RegExp(
+  /^[0-9]{4}\/(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])$/
+);
 export const userFormSchema = z.object({
   name: z
     .string()
@@ -19,18 +21,21 @@ export const userFormSchema = z.object({
     .string()
     .min(1, '必須入力です')
     .transform((val) => {
+      if (birthDateRegex.test(val)) {
+        return val;
+      }
+
       const formatBirthday = (value: string, index: 4 | 7): string => {
         return value.slice(0, index) + '/' + value.slice(index);
       };
       let newDateNum = formatBirthday(val, 4);
       newDateNum = formatBirthday(newDateNum, 7);
+
       return newDateNum;
     })
     .refine(
       (val) => {
-        const birthDateRegex = new RegExp(
-          /^[0-9]{4}\/(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])$/
-        );
+        console.log(birthDateRegex.test(val), val);
         return birthDateRegex.test(val);
       },
       {
