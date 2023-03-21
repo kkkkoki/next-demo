@@ -33,15 +33,9 @@ export const userFormSchema = z.object({
 
       return newDateNum;
     })
-    .refine(
-      (val) => {
-        console.log(birthDateRegex.test(val), val);
-        return birthDateRegex.test(val);
-      },
-      {
-        message: '生年月日が正しく入力されていません',
-      }
-    ),
+    .refine((val) => birthDateRegex.test(val), {
+      message: '生年月日が正しく入力されていません',
+    }),
   gender: z.enum(['female', 'male', 'other'], {
     errorMap: (_issue, _ctx) => ({ message: '性別を選択してください' }),
   }),
