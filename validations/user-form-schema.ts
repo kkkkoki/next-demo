@@ -4,9 +4,11 @@ import { z } from 'zod';
 const NAME_MIN_LENGTH = 1;
 const NAME_MAX_LENGTH = 50;
 const EMAIL_MAX_LENGTH = 256;
+
 const birthDateRegex = new RegExp(
   /^[0-9]{4}\/(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])$/
 );
+
 export const userFormSchema = z.object({
   name: z
     .string()
